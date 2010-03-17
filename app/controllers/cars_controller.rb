@@ -10,7 +10,7 @@ class CarsController < ApplicationController
       flash[:notice] = "There's a problem with your new car."
     end
 
-    redirect_to user_url(@car.user)
+    update_or_redirect(@car.user)
   end
 
   # DELETE /cars/1
@@ -18,8 +18,18 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     user = @car.user
     @car.destroy
-
-    redirect_to user_url(user)
+    
+    update_or_redirect(user)
+  end
+  
+  private
+  
+  def update_or_redirect(user)
+    if(request.xhr?)
+      render :partial => 'users/car_list', :object => user.cars
+    else
+      redirect_to_user user
+    end
   end
   
 end
