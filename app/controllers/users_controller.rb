@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
+    # Create a car object for the embedded form
+    @car = Car.new(:user => @user)
 
     respond_to do |format|
       format.html # show.html.erb
