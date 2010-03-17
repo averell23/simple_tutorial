@@ -7,7 +7,7 @@
   </p>
   <p>
     <%= f.label :birthday %><br />
-    <%= f.date_select :birthday %>
+    <%= f.date_select :birthday, :start_year => (Time.now.year - 99), :end_year => (Time.now.year - 17) %>
   </p>
   <p>
     <%= f.submit 'Create' %>
