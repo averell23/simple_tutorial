@@ -1,5 +1,5 @@
 <h3>Add a new car</h3>
-<% form_for(@car) do |f| %>
+<% form_remote_for(@car, :update => 'car_list') do |f| %>
   <%= f.error_messages %>
 
   <p>
