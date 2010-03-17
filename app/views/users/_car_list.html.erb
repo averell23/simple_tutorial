@@ -1,0 +1,8 @@
+<% unless car_list.empty? %>
+  <h3>The cars</h3>
+  <ul>
+  <% for car in car_list %>
+    <li><%= car.model_name %>, <%= car.color %> from <%= car.made_in.year %></li>
+  <% end %>
+  </ul>
+<% end %>
