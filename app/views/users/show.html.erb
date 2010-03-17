@@ -8,7 +8,9 @@
   <%=h @user.birthday %>
 </p>
 
+<div id="car_list">
 <%= render :partial => 'car_list', :object => @user.cars %>
+</div>
 
 <%= render :partial => 'car_form' %>
 
