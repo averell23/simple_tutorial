@@ -1,0 +1,3 @@
+= Simple tutorial application
+
+You can follow the tutorial by checking the git commits. Each commit explains what was changed in the application and what commands need to be run.
