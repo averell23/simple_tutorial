@@ -2,7 +2,10 @@
   <h3>The cars</h3>
   <ul>
   <% for car in car_list %>
-    <li><%= car.model_name %>, <%= car.color %> from <%= car.made_in.year %></li>
+    <li>
+		<%= car.model_name %>, <%= car.color %> from <%= car.made_in.year %>
+		<%= link_to "delete", car_url(car), :method => :delete, :confirm => "Do you want to remove this car?" %>
+	</li>
   <% end %>
   </ul>
 <% end %>
