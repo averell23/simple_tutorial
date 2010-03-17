@@ -8,6 +8,9 @@
   <%=h @user.birthday %>
 </p>
 
+<%= render :partial => 'car_list', :object => @user.cars %>
+
+<%= render :partial => 'car_form' %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
